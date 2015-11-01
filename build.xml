@@ -31,4 +31,9 @@
     </junit>
   </target>
 
+  <target name="setlocalurl">
+    <echo file="url" message="192.168.34.10"/>
+  </target>
+  
+  <target name="testlocal" depends="setlocalurl,test"/>
 </project>
