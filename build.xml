@@ -1,0 +1,34 @@
+<project name="survey" basedir="." default="test">
+
+  <target name="init">
+    <mkdir dir="target/test-classes"/>
+    <mkdir dir="target/reports"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="target" includeemptydirs="true"/>
+  </target>
+  
+  <path id="test.classpath">
+    <pathelement path="target/test-classes"/>
+    <fileset dir="lib" includes="*.jar" />
+  </path>
+  
+  <target name="compile-tests" depends="init">
+    <javac destdir="target/test-classes">
+      <classpath refid="test.classpath"/>
+      <src path="src/" />
+    </javac>
+  </target>
+  
+  <target name="test" depends="compile-tests">
+    <junit printsummary="withOutAndErr"  failureproperty="test.failure" haltonfailure="true">
+      <classpath refid="test.classpath"/>
+      <formatter type="plain"/>
+      <batchtest todir="target/reports">
+        <fileset dir="target/test-classes" includes="**/*Test.class" />
+      </batchtest>
+    </junit>
+  </target>
+
+</project>
