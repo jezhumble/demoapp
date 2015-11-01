@@ -1,4 +1,12 @@
 <html>
+<head>
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,600,800" rel="stylesheet" type="text/css"/>
+<style>
+* {
+font-family: 'Open Sans';
+}
+</style>
+</head>
 <body>
 <h1>Convert acre-feet to cubic meters!!!</h1>
 <?if (isset($_REQUEST["acreFeet"])) {?>
