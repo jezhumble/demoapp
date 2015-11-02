@@ -4,11 +4,12 @@
 <style>
 * {
 font-family: 'Open Sans';
+color:red;
 }
 </style>
 </head>
 <body>
-<h1>Convert acre-feet to cubic meters!!!</h1>
+<h1>Convert acre-feet to cubic meters!</h1>
 <?if (isset($_REQUEST["acreFeet"])) {?>
    <p><?=$_REQUEST["acreFeet"]?> acre-feet in cubic meters is:<p>
    <p class="result"><?=$_REQUEST["acreFeet"]*1233.48?></p>
